@@ -8,6 +8,7 @@ import api from '../../services/api'
   //components
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import Webcam from '../../components/webcam'
 import TypeIcons from '../../utils/typeicons'
 
   function Task({match}) {
@@ -128,6 +129,8 @@ import TypeIcons from '../../utils/typeicons'
         {redirect && <Redirect to="/"/>}
         
         <Header />
+
+        <Webcam />
 
 
         <S.Form>    
