@@ -103,7 +103,7 @@ export const inputs = Styled.div`
     display:flex;   
     width:80%;
     flex-wrap:wrap;
-    height:500px;
+    height:290px;
     margin-top:30px;
 
 `
@@ -142,7 +142,7 @@ export const privativo = Styled.div`
 
     #privativo{
         width:100%;
-        heigth:70px;
+        heigth:50px;
         display: flex;
         margin-left:45px;
         justify-content:center;
@@ -156,8 +156,8 @@ export const privativo = Styled.div`
     align-items: center;
 
     border-radius: 100px;
-    padding: 14px 16px;
-    margin: 10px 0;
+    padding: 5px 10px;
+    margin: 5px 0;
 
     cursor: pointer;
     transition: .3s;
@@ -231,7 +231,10 @@ export const textarea = Styled.div`
     textarea{
         padding:5px;
         border: 1px solid #155E70;
-        heigth:70px;
+        heigth:60px;
+        width:90%;
+        resize: none;
+        display: flex;
 
     }
 
@@ -295,11 +298,8 @@ export const legendaIcons = Styled.div`
 `
 
 export const iconsContent = Styled.div`
-
     width:80%;
     display:flex;
     align-items: center;
     justify-content: space-between;
-    
-
 `
