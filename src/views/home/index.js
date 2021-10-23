@@ -63,17 +63,17 @@ function Home() {
         </button>
         
         <button type="button" onClick={()=>setFilterActived("1")}>
-          <FilterCard title="masculino"actived={filterActived === "1"} />
+          <FilterCard title="Masculino"actived={filterActived === "1"} />
           
         </button>
 
         <button type="button" onClick={()=>setFilterActived("2")}>
-          <FilterCard title="feminino"actived={filterActived === "2"} />
+          <FilterCard title="Feminino"actived={filterActived === "2"} />
           
         </button>
 
         <button type="button" onClick={()=>setFilterActived("3")}>
-          <FilterCard title="acompanhante"actived={filterActived === "3"} />
+          <FilterCard title="Acompanhante"actived={filterActived === "3"} />
           
         </button>
 

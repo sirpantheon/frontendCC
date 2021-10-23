@@ -2,6 +2,7 @@ import React from 'react'
 import * as S from './style'
 import Webcam from 'react-webcam'
 import { useRef } from 'react'
+import {useState} from 'react'
 
 const videoConstraints = {
     width: 640,
@@ -11,6 +12,8 @@ const videoConstraints = {
 
 
 function WebcamComponent(){
+
+    const [image,setImage] = useState()
 
     const webcamRef = useRef(null);
 
@@ -33,6 +36,7 @@ function WebcamComponent(){
             />
 
             <button onClick={capture}>Capturar Foto</button>
+
         </S.Container>
     )
 }

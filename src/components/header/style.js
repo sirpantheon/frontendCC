@@ -18,7 +18,7 @@ export const leftSide = styled.div `
     padding-left: 10px;
 
     h1{
-        font-size:200%;
+        font-size:2vw;
         color:#000
     }
 
@@ -36,7 +36,7 @@ export const rightSide = styled.div `
         font-weight: bold;
         text-decoration: none;
         margin:0 20px;
-        font-size:23px;
+        font-size:1.3vw;
 
         &:hover{
             color:#155E70;

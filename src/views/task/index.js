@@ -17,6 +17,7 @@ import TypeIcons from '../../utils/typeicons'
     const [ id,setId]= useState()
     const [ devolucao,setDevolucao]= useState(false)
     const [ nome,setNome ]= useState()
+    const [ image,setImage ]= useState()
     const[ registro,setRegistro ]= useState()
     const [ especialidade,setEspecialidade ] = useState()
     const [ chave,setChave ]= useState()
@@ -130,9 +131,8 @@ import TypeIcons from '../../utils/typeicons'
         
         <Header />
 
-        <Webcam />
-
-
+        <Webcam nome="image" onChange={e => setImage(e.target.value)} value={image}/>
+        
         <S.Form>    
             <S.typeIcons>
                 <S.iconsContent>
@@ -239,15 +239,19 @@ import TypeIcons from '../../utils/typeicons'
             </S.inputs>
               <S.options>
                 <div>
-                  <input type="checkbox" name="entregue" checked={devolucao} onChange={e => setDevolucao(!devolucao)} />
-                  <span>Entregue</span>
+                  <label for="devolucao" >
+                      <input 
+                        type="checkbox" 
+                        name="entregue" 
+                        checked={devolucao} 
+                        onChange={e => setDevolucao(!devolucao)}
+                        id="devolucao"
+                      />
+                  Entregue</label>
                 </div>
 
-                
                   {match.params.id && <button type="button" onClick={remove}>Excluir</button>}
-                
-
-                
+  
                   <button type="submit" onClick={Save}>enviar</button>
                 
               </S.options>

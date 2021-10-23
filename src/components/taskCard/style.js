@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div `
     width:80%;
-    height:220px;
+    height:13em;
     
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@ export const Container = styled.div `
     box-shadow:  0px 0px 15px 5px #b4b7bc;
     border-top-left-radius: 20px;
     cursor:pointer;
-    margin:30px;
+    margin:1.5em;
     transition:all 0.3s ease;
 
     opacity: ${props => props.devolucao ? 0.5 : 1};
@@ -30,7 +30,7 @@ export const BottomCard = styled.div`
     width:100%;
     display:flex;  
     justify-content: space-around;
-    font-size:20px;
+    font-size:1.2vw;
 
     strong{
         font-weight:bold;
@@ -39,6 +39,7 @@ export const BottomCard = styled.div`
 
 `
 export const TopCard = styled.div`
+    font-size:1vw;
     display:flex;   
     justify-content: center;
     align-items: center;
@@ -48,14 +49,16 @@ export const chave = styled.div`
     display:flex;
     align-items: center;
     justify-content:center;
+    width:5em;
+    height:5em;
 
     .ativo{
         display:flex;
         background:#ffff00;
         color:#000;
         border-radius:50px;
-        width:40px;
-        height:40px;
+        width:1.9em;
+        height:1.9em;
         align-items: center;
         justify-content:center;
         position:absolute;
@@ -67,8 +70,8 @@ export const chave = styled.div`
         background:#155E70;
         color:#FFF;
         border-radius:50px;
-        width:40px;
-        height:40px;
+        width:1.9em;
+        height:1.9em;
         align-items: center;
         justify-content:center;
         position:absolute;
@@ -78,9 +81,9 @@ export const chave = styled.div`
 
     img{
         display:flex;
-        width:70px;
-        height:70px;
-        margin-bottom:20px;
+        width:4em;
+        height:4em;
+        margin-bottom:0.5em;
     }
     
 `

@@ -13,14 +13,14 @@ export const FilterArea = Styled.div`
     margin-top: 20px;
 
     button{
-        font-size:10px;
+        font-size:1.6vw;
         width:13%;
         background:none;
         border:none;
 
         span{
             width:100%;
-            font-size: 30px;
+            
         }
     }
  
@@ -45,15 +45,14 @@ export const Title = Styled.div`
     border-bottom:3px solid #155E70;
     display:flex;
     justify-content:center;
-    margin:30px 0;
+    margin:10px 0;
 
     h3{
         color:#155E70;
-        font-size:25px;
+        font-size:1.5vw;
         position:relative;
         top:16px;
         background:#fff;
-        padding:0px 20px;
     }
 `
 export const Entrega = Styled.div`

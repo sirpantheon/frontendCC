@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import * as S from './styles'
 import {useState} from 'react'
+import {Redirect} from 'react-router-dom'
 
 import api from '../../services/api'
 
@@ -12,7 +13,6 @@ import CardPuerpera from '../../components/cardPuerpera'
 
   function Purpera({match}) {
     const [redirect,setRedirect] = useState(false)
-    const [ type,setType ]= useState()
     const [ nome,setNome ]= useState()
     const[ registro,setRegistro ]= useState()
     const [ macaddress,setMacaddress ]= useState("11:11:11:11:11:11")
@@ -43,7 +43,7 @@ import CardPuerpera from '../../components/cardPuerpera'
           leito
         }).then(()=>
             alert("Registrado Com Sucesso!!"),
-          setRedirect(true)
+            setRedirect(true)
         )
       
     }
@@ -58,27 +58,16 @@ import CardPuerpera from '../../components/cardPuerpera'
       }else{
         alert("OK, Vamos Manter")
       }
-
   }
-
-
-  const myScrol = {
-    width: '100%',
-    height: '450px',
-    overflowX: 'hidden',
-    overflowY: 'scroll'
-};
-
 
     useEffect(()=>{
       loadTask()
     },[] )
 
-
-
-
       return (
       <S.Container>
+
+        {redirect && <Redirect to="/"/>}
 
         
         <Header />
@@ -86,28 +75,42 @@ import CardPuerpera from '../../components/cardPuerpera'
             <S.Title><h3>Puerpera</h3></S.Title>
             <S.inputs>
               <S.input>
-                <span>Nome</span>
-                <input type="text" placeholder="NOME DO PACIENTE" onChange={e => setNome(e.target.value)} value={nome}/>
+                <span class="cadPuerpera">Nome</span>
+                <input 
+                  type="text" 
+                  placeholder="NOME DO PACIENTE" 
+                  onChange={e => setNome(e.target.value)} 
+                  value={nome} 
+                  initialValue=""
+                />
               </S.input>
 
               <S.input>
-                <span>Registro</span>
-                <input type="text" placeholder="REGISTRO DO PACIENTE" onChange={e => setRegistro(e.target.value)} value={registro}/>
+                <span class="cadPuerpera">Registro</span>
+                <input 
+                  type="text" 
+                  placeholder="REGISTRO DO PACIENTE" 
+                  onChange={e => setRegistro(e.target.value)} 
+                  value={registro} 
+                  initialValue=""
+                />
               </S.input>
 
               <S.input>
-                <span>Leito</span>
-                <input type="text" placeholder="NUMERO DO LEITO" onChange={e => setLeito(e.target.value)} value={leito}/>
+                <span class="cadPuerpera">Leito</span>
+                <input 
+                  type="text" 
+                  placeholder="NUMERO DO LEITO" 
+                  onChange={e => setLeito(e.target.value)} 
+                  value={leito} 
+                  initialValue=""
+                />
               </S.input>
              
             </S.inputs>
 
             <S.options>
                                 
-                  {match.params.id && <button type="button" onClick={remove}>Excluir</button>}
-                
-
-                
                   <button type="submit" onClick={Save}>enviar</button>
                 
               </S.options>
@@ -115,22 +118,11 @@ import CardPuerpera from '../../components/cardPuerpera'
         <S.Content>
 
             {card.map(p =>(
-              <CardPuerpera nome={p.nome} registro={p.registro} leito={p.leito} data={p.data}/>
+              <CardPuerpera nome={p.nome} registro={p.registro} leito={p.leito} data={p.data} class="cardPuerpera"/>
             ))}
 
         </S.Content>
-        
-            
-               
 
-           
-         
-        
-
-
-
-        
-  
         <Footer/>
   
       </S.Container>

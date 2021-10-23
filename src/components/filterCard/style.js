@@ -14,7 +14,6 @@ export const Container = styled.div `
     transition:all 0.3s ease;
 
     span{
-        font-size:40px;
         font-weight:bold;
     }
 

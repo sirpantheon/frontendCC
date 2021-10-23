@@ -10,44 +10,7 @@ export const Container = Styled.div`
 
  
 `
-export const FilterArea = Styled.div`
-    display:flex;
-    width:100%;
-    justify-content: space-around;
-    margin-top: 15px;
 
-    button{
-        width:20%;
-        background:none;
-        border:none;
-    }
- 
-`
-
-export const Content = Styled.div`
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:center;
-
-
-`
-
-export const Title = Styled.div`
-    width:100%;
-    border-bottom:3px solid #40407a;
-    display:flex;
-    justify-content:center;
-    margin:35px 0;
-
-    h3{
-        color:#40407a;
-        font-size:25px;
-        position:relative;
-        top:16px;
-        background:#fff;
-        padding:0px 20px;
-    }
-`
 export const Form = Styled.div`
     width:80%;
     display:flex;
@@ -58,46 +21,66 @@ export const Form = Styled.div`
 
 
 `
-export const typeIcons = Styled.div`
+export const legendaIcons = Styled.div`
 
-    width:50%;
+    width:77%;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom: 25px;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color:#b4b4b4;
+
+    h3{
+        font-size:1.2vw;
+        width:2em; 
+        height:2em;
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+        
+    }
+
+`
+
+export const iconsContent = Styled.div`
+    width:80%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
 
     .inative{
-            opacity:0.5;
-            width:60px;
-            height:60px;
-            button{
-                box-shadow: 0 2px 4px 1px #40407a;
-            }
+        opacity:0.5;
+        width:5em; 
+        height:5em;
+        border:none;
+        background:none;
+    
     }
 
     button{
         display:flex;
-        width:70px; 
-        height:70px;
+        width:4.8em; 
+        height:4.8em;
+        border:none;
         align-items: center;
         justify-content:center;
         background:none;
         border-radius:50%;
-        box-shadow: 10px 10px 12px 0 #40407a;
+        box-shadow: 3px 3px 7px 0 #155E70;
+        cursor:pointer;
+
+        &:hover{
+            opacity:0.9;
+        }
         
     }
+`
+export const typeIcons = Styled.div`
 
-    img{
-       
-        width:70px; 
-        height:70px;
-        cursor:pointer;
-        &:hover{
-            opacity:0.8;
-
-        }
-    }
+    width:80%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction: column;
 `
 export const inputs = Styled.div`
     display:flex;   
@@ -118,23 +101,23 @@ export const input = Styled.div`
 
     span{
         width:20%;
-        color:#40407a;
+        color:#155E70;
         padding:15px 20px;
     }
 
     input{
         width:80%;
-        font-size:20px;
+        font-size:1.2vw;
         padding:5px;
         border:none;
         background:none;
-        border-bottom:1px solid #40407a;
+        border-bottom:1px solid #155E70;
     }
 
     select{
         width:80%;
         border:none;
-        border-bottom:1px solid #40407a;
+        border-bottom:1px solid #155E70;
     }
 
 `
@@ -183,7 +166,7 @@ export const privativo = Styled.div`
     height: 22px;
     border-radius: 100px;
 
-    background: linear-gradient(to right bottom, #50508a, #40407a);
+    background: linear-gradient(to right bottom, #155E70, #155E70);
     position: relative;
     }
 
@@ -205,11 +188,11 @@ export const privativo = Styled.div`
     }
 
     .rad-text {
-    color: #50508a;
+    color: #155E70;
     margin-left: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 1.3vw;
     font-weight: 900;
 
     transition: .3s;
@@ -242,24 +225,26 @@ export const textarea = Styled.div`
 export const options = Styled.div`
 
     display:flex;
-    width:100%;
+    width:80%;
     justify-content: space-around;
-    align-items:center;
-    
+    align-items:center;    
 
-    div{
+    label{
         display:flex;
-        background:none;        
-        font-size:20px;
+        background:#efefef;        
+        font-size:1.3vw;
         justify-content:center;
         align-items: center;
         cursor: pointer;
+        padding: 3px 30px ;
         font-weight:bold;
-
+        border-radius:15px;
+     
         &:hover{
             opacity:0.7;
-            text-shadow:0 0 20px #155E70, 0 0 30px #155E70, 0 0 40px #155E70;
+            background:#d8d8d8;
         }
+
     }
 
     button{
@@ -269,7 +254,7 @@ export const options = Styled.div`
         border-radius:50px;
         background:#155E70;
         cursor: pointer;
-        font-size:20px;
+        font-size:1.2vw;
 
         &:hover{
             opacity:0.7;
@@ -277,29 +262,4 @@ export const options = Styled.div`
             width:135px;
         }
     }
-`
-export const legendaIcons = Styled.div`
-
-    width:87%;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    color:#b4b4b4;
-
-    h3{
-        font-size:25px;
-        width:135px;
-        display:flex;
-        align-items: center;
-        justify-content: space-around;
-        
-    }
-
-`
-
-export const iconsContent = Styled.div`
-    width:80%;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
 `
