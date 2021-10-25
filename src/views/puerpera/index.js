@@ -48,17 +48,19 @@ import CardPuerpera from '../../components/cardPuerpera'
       
     }
 
-  async function remove(){
-    const options = window.confirm('Voce De seja Remover Esse Registro ?')
-      if(options === true){
+    async function remove(){
+      const options = window.confirm('Voce De seja Remover Esse Registro ?')
+        if(options === true){
+  
+          alert("OK, Vamos Remover")
+          await api.delete(`/task/puerpera/${match.params.id}`)
+          .then(() => {setRedirect(true)})
+        }else{
+          alert("OK, Vamos Manter")
+        }
+    }
 
-        alert("OK, Vamos Remover")
-        await api.delete(`/task/puerpera/:id/${match.params.id}`)
-        .then(() => {setRedirect(true)})
-      }else{
-        alert("OK, Vamos Manter")
-      }
-  }
+
 
     useEffect(()=>{
       loadTask()
@@ -118,7 +120,9 @@ import CardPuerpera from '../../components/cardPuerpera'
         <S.Content>
 
             {card.map(p =>(
-              <CardPuerpera nome={p.nome} registro={p.registro} leito={p.leito} data={p.data} class="cardPuerpera"/>
+              <button type="button" onClick={remove}>
+                <CardPuerpera nome={p.nome} registro={p.registro} leito={p.leito} data={p.data} class="cardPuerpera"/>
+              </button>
             ))}
 
         </S.Content>

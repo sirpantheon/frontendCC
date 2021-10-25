@@ -1,6 +1,8 @@
 import React, {useState , useEffect} from 'react'
 import {Redirect} from 'react-router-dom'
 import * as S from './styles'
+import Webcam from 'react-webcam'
+import { useRef } from 'react'
 
   
 import api from '../../services/api'
@@ -8,7 +10,7 @@ import api from '../../services/api'
   //components
 import Header from '../../components/header'
 import Footer from '../../components/footer'
-import Webcam from '../../components/webcam'
+import Webcam2 from '../../components/webcam'
 import TypeIcons from '../../utils/typeicons'
 
   function Task({match}) {
@@ -28,6 +30,21 @@ import TypeIcons from '../../utils/typeicons'
     const [ tasks,setTasks ]=useState([])
     const [ lateCount,setLateCount ] = useState()
 
+    const webcamRef = useRef(null);
+    const videoConstraints = {
+      width: 640,
+      height: 360,
+      facingMode: "user"
+      
+    };
+
+    let webClasse = ""
+    if(webClasse){
+      webClasse = "ativo"
+    }else{
+      webClasse = "inativo"
+    }
+
 
 
     async function LoadTaskDetail(){
@@ -41,6 +58,7 @@ import TypeIcons from '../../utils/typeicons'
         setChave(response.data.chave)
         setPrivativo(response.data.privativo)
         setDescricao(response.data.descricao)
+        setImage(response.data.image)
       })
 
     }
@@ -82,7 +100,8 @@ import TypeIcons from '../../utils/typeicons'
           privativo,
           descricao,
           devolucao,
-          type
+          type,
+          image
         }).then(()=>
           alert("Registrado Mofificado Com Sucesso!!"),
           setRedirect(true)
@@ -97,7 +116,8 @@ import TypeIcons from '../../utils/typeicons'
           privativo,
           descricao,
           devolucao,
-          type
+          type,
+          image
         }).then(()=>
           alert("Registrado Com Sucesso!!"),
           setRedirect(true)
@@ -117,12 +137,31 @@ import TypeIcons from '../../utils/typeicons'
       }
 
   }
+  
+    const capture = React.useCallback(
+        () => {
+          const imageSrc = webcamRef.current.getScreenshot({width:640,height:300});
+          console.log(imageSrc);
+          setImage(imageSrc)
+          return imageSrc
+          
+        },
+        [webcamRef]
+      ); 
+
+      async function Limpar(){
+        setImage("")  
+            
+        return setImage
+      }
+
 
     useEffect(()=>{
       LoadTaskDetail()
       loadTask()
       lateVerify()
     },[] )
+
 
       return (
       <S.Container>
@@ -131,9 +170,33 @@ import TypeIcons from '../../utils/typeicons'
         
         <Header />
 
-        <Webcam nome="image" onChange={e => setImage(e.target.value)} value={image}/>
         
-        <S.Form>    
+        <S.Form>   
+          <S.ContainerWebCam>
+            <Webcam 
+              nome="image" 
+              onChange={e => setImage(e.target.value)} 
+              value={image}
+              ref={webcamRef} 
+              audio={false}
+              height={150}
+              width={240}
+              screenshotFormat="image/jpeg"
+              videoConstraints={videoConstraints}
+              mirrored={true}
+            />
+
+            <S.button>
+              <button onClick={capture}>Capturar Foto</button>
+              <button onClick={Limpar}>Limpar</button>
+            </S.button>
+
+            <img src={image} name="image" id="image" image={image} class={webClasse} alt="" value={console.log(image)} />
+            
+          </S.ContainerWebCam>
+
+
+          
             <S.typeIcons>
                 <S.iconsContent>
                   {
@@ -252,7 +315,7 @@ import TypeIcons from '../../utils/typeicons'
 
                   {match.params.id && <button type="button" onClick={remove}>Excluir</button>}
   
-                  <button type="submit" onClick={Save}>enviar</button>
+                  <button type="submit" onClick={Save}>Enviar</button>
                 
               </S.options>
 

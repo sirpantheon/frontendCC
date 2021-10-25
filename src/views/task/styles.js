@@ -263,3 +263,55 @@ export const options = Styled.div`
         }
     }
 `
+export const ContainerWebCam = Styled.div`
+
+    display:flex;
+    flex-direction:column;
+    margin: 0;
+    padding: 0;
+    width:260px;
+    height:150px;
+    background:#155E70;
+    top:100px;
+    left:10px;
+    position:absolute;
+    content-justify: center;
+    align-items: center;
+
+    img{
+        position:absolute;
+        width:260px;
+        height:135px;
+        display:flex;
+        margin: 0;
+        padding: 0;
+        top:0px;
+        left:0px;
+
+        ${props => props.value ? 0.0 : 1};        
+        
+    }
+`
+export const button = Styled.div`
+    display:flex;
+    width:100%;
+    align-items:center;
+    content-justify: center;
+
+    button{
+        display:flex;
+        width:50%;
+    }
+
+`
+
+export const Webcam = Styled.div`
+    width:100%;
+    heigth:100%;
+    display:flex;
+    content-justify: center;
+    align-items: center;
+
+
+
+`
