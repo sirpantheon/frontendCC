@@ -10,7 +10,6 @@ import api from '../../services/api'
   //components
 import Header from '../../components/header'
 import Footer from '../../components/footer'
-import Webcam2 from '../../components/webcam'
 import TypeIcons from '../../utils/typeicons'
 
   function Task({match}) {
