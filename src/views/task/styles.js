@@ -69,7 +69,7 @@ export const iconsContent = Styled.div`
         cursor:pointer;
 
         &:hover{
-            opacity:0.9;
+            opacity:0.7;
         }
         
     }
@@ -86,138 +86,49 @@ export const inputs = Styled.div`
     display:flex;   
     width:80%;
     flex-wrap:wrap;
-    height:290px;
-    margin-top:30px;
+    height:20em;
+    margin-top:1.5em;
 
 `
 export const input = Styled.div`
     display:flex;
     width:50%;
-    height:50px;
-
-    .privativo{
-        color:red;
-    }
+    height:3vw;
 
     span{
         width:20%;
         color:#155E70;
-        padding:15px 20px;
+        padding:0.7em;
+        font-size:1vw;
     }
 
     input{
         width:80%;
         font-size:1.2vw;
-        padding:5px;
+        padding:0.7em;
         border:none;
         background:none;
         border-bottom:1px solid #155E70;
-    }
-
-    select{
-        width:80%;
-        border:none;
-        border-bottom:1px solid #155E70;
+        text-transform: capitalize;
     }
 
 `
-export const privativo = Styled.div`
 
-    #privativo{
-        width:100%;
-        heigth:50px;
-        display: flex;
-        margin-left:45px;
-        justify-content:center;
-        align-items: center;
-        
-    }
-    /* MAIN */
-    /* =============================================== */
-    .rad-label {
-    display: flex;
-    align-items: center;
-
-    border-radius: 100px;
-    padding: 5px 10px;
-    margin: 5px 0;
-
-    cursor: pointer;
-    transition: .3s;
-    }
-
-    .rad-label:hover,
-    .rad-label:focus-within {
-    background: hsla(0, 0%, 80%, .14);
-    }
-
-    .rad-input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    z-index: -1;
-    }
-
-    .rad-design {
-    width: 22px;
-    height: 22px;
-    border-radius: 100px;
-
-    background: linear-gradient(to right bottom, #155E70, #155E70);
-    position: relative;
-    }
-
-    .rad-design::before {
-    content: '';
-
-    display: inline-block;
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-
-    background: hsl(0, 0%, 90%);
-    transform: scale(1.1);
-    transition: .3s;
-    }
-
-    .rad-input:checked+.rad-design::before {
-    transform: scale(0);
-    }
-
-    .rad-text {
-    color: #155E70;
-    margin-left: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 1.3vw;
-    font-weight: 900;
-
-    transition: .3s;
-    }
-
-    .rad-input:checked~.rad-text {
-    color: #155E70;
-    }
-
-
-`
 export const textarea = Styled.div`
     display:flex;
-    width:50%;
+    width:40%;
     flex-direction: column;
-    margin-left:20px;
+    margin-left:9%;
     
-
     textarea{
-        padding:5px;
+        padding:0.7em;
         border: 1px solid #155E70;
         heigth:60px;
         width:90%;
         resize: none;
         display: flex;
+        text-transform: capitalize;
+        font-size:1vw;
 
     }
 
@@ -248,9 +159,9 @@ export const options = Styled.div`
     }
 
     button{
-        width:130px;
+        width:7vw;
         color:#FFF;
-        border-bottom:4px solid #155E70;
+        border-bottom:1px solid #155E70;
         border-radius:50px;
         background:#155E70;
         cursor: pointer;
@@ -259,7 +170,7 @@ export const options = Styled.div`
         &:hover{
             opacity:0.7;
             box-shadow:0 4px 20px #155E70;
-            width:135px;
+            
         }
     }
 `
@@ -271,25 +182,26 @@ export const ContainerWebCam = Styled.div`
     padding: 0;
     width:260px;
     height:150px;
-    background:#155E70;
-    top:100px;
+    top:80px;
     left:10px;
     position:absolute;
     content-justify: center;
     align-items: center;
 
+    .ativo{
+        z-index: 1; 
+    }
+    .inativo{
+        z-index: -1; 
+    }
+
     img{
         position:absolute;
+        background:#155E70;
         width:260px;
         height:135px;
         display:flex;
-        margin: 0;
-        padding: 0;
-        top:0px;
-        left:0px;
-
-        ${props => props.value ? 0.0 : 1};        
-        
+        z-index: -1;  
     }
 `
 export const button = Styled.div`
@@ -298,9 +210,28 @@ export const button = Styled.div`
     align-items:center;
     content-justify: center;
 
+    .btn-capturar{
+        border-radius: 0px 0px 0px 10px ;
+    }
+    .btn-limpar{
+        border-radius: 0px 0px 10px 0px;
+    }
+
     button{
-        display:flex;
+        padding:0px;
+        text-align: center;
         width:50%;
+        height:1.5em;
+        color:#d8d8d8;
+        background:#155E70;
+        border-bottom: 1px solid #155E70;
+        font-size: 1vw;
+        
+        &:hover{
+            cursor: pointer;
+            box-shadow: 0px 3px 10px 3px #155E70 ;
+            opacity:0.8;
+        }
     }
 
 `

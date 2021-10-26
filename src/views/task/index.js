@@ -15,7 +15,6 @@ import TypeIcons from '../../utils/typeicons'
   function Task({match}) {
     const [redirect,setRedirect] = useState(false)
     const [ type,setType ]= useState()
-    const [ id,setId]= useState()
     const [ devolucao,setDevolucao]= useState(false)
     const [ nome,setNome ]= useState()
     const [ image,setImage ]= useState()
@@ -25,7 +24,7 @@ import TypeIcons from '../../utils/typeicons'
     const [ privativo,setPrivativo ]= useState()
     const [ descricao,setDescricao ]= useState()
     const [ macaddress,setMacaddress ]= useState("11:11:11:11:11:11")
-    const [ filterActived, setFilterActived]=useState()
+    const [ filterActived, setFilterActived]=useState('today')
     const [ tasks,setTasks ]=useState([])
     const [ lateCount,setLateCount ] = useState()
 
@@ -38,7 +37,7 @@ import TypeIcons from '../../utils/typeicons'
     };
 
     let webClasse = ""
-    if(webClasse){
+    if(image){
       webClasse = "ativo"
     }else{
       webClasse = "inativo"
@@ -186,12 +185,12 @@ import TypeIcons from '../../utils/typeicons'
             />
 
             <S.button>
-              <button onClick={capture}>Capturar Foto</button>
-              <button onClick={Limpar}>Limpar</button>
+              <button onClick={capture} >Capturar Foto</button>
+              <button onClick={Limpar} >Limpar</button>
             </S.button>
 
-            <img src={image} name="image" id="image" image={image} class={webClasse} alt="" value={console.log(image)} />
-            
+            <img src={image} name="image" id="image" image={image} className={webClasse}alt="" value={console.log(image)} />
+
           </S.ContainerWebCam>
 
 
@@ -258,46 +257,23 @@ import TypeIcons from '../../utils/typeicons'
                 <input type="number" placeholder="NUMERO" onChange={e => setChave(e.target.value)} value={chave}/>
               </S.input>
 
+              <S.input>
+              <span>Privativo</span>
+                
+                <input type="text" list="privativo" name="privativo" placeholder="TAMANHO" onChange={e => setPrivativo(e.target.value)} value={privativo}/> 
+                <datalist id="privativo">
+                  <option value="P"/>
+                  <option value="M"/>
+                  <option value="G"/>
+                  <option value="GG"/>
+                  <option value="XG"/>
+                </datalist>
+              </S.input>
+
               <S.textarea>
-                <textarea placeholder="Observações" rows={3} name="descricao" onChange={e => setDescricao(e.target.value)} value={descricao}/>
+                <textarea placeholder="Observações..." rows={3} name="descricao" onChange={e => setDescricao(e.target.value)} value={descricao}/>
               </S.textarea>
 
-              <S.privativo>
-                <div id="privativo">
-
-                  <label class="rad-label">
-                    <input type="radio" class="rad-input" name="privativo" onChange={e => setPrivativo(e.target.value)} value={privativo}/>
-                    <div class="rad-design"></div>
-                    <div class="rad-text">P</div>
-                  </label>
-
-                  <label class="rad-label">
-                    <input type="radio" class="rad-input" name="privativo" onChange={e => setPrivativo(e.target.value)} value={privativo}/>
-                    <div class="rad-design"></div>
-                    <div class="rad-text">M</div>
-                  </label>
-
-                  <label class="rad-label">
-                    <input type="radio" class="rad-input" name="privativo" onChange={e => setPrivativo(e.target.value)} value={privativo}/>
-                    <div class="rad-design"></div>
-                    <div class="rad-text">G</div>
-                  </label>
-
-                  <label class="rad-label">
-                    <input type="radio" class="rad-input" name="privativo" onChange={e => setPrivativo(e.target.value)} value={privativo}/>
-                    <div class="rad-design"></div>
-                    <div class="rad-text">GG</div>
-                  </label>
-
-                  <label class="rad-label">
-                    <input type="radio" class="rad-input" name="privativo" onChange={e => setPrivativo(e.target.value)} value={privativo}/>
-                    <div class="rad-design"></div>
-                    <div class="rad-text">XG</div>
-                  </label>
-
-                </div>
-
-              </S.privativo>
             </S.inputs>
               <S.options>
                 <div>
