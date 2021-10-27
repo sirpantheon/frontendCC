@@ -254,7 +254,7 @@ import TypeIcons from '../../utils/typeicons'
 
               <S.input>
                 <span>Chave</span>
-                <input type="number" placeholder="NUMERO" onChange={e => setChave(e.target.value)} value={chave}/>
+                <input type="number" placeholder="NUMERO" onChange={e => setChave(e.target.value)} value={chave} min="1" max="60"/>
               </S.input>
 
               <S.input>
