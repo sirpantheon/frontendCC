@@ -49,23 +49,28 @@ export const iconsContent = Styled.div`
 
     .inative{
         opacity:0.5;
-        width:5em; 
-        height:5em;
+        width:5vw; 
+        height:5vw;
         border:none;
         background:none;
     
     }
 
+    img{
+        width:4.5vw; 
+        height:4.5vw;
+    }
+
     button{
         display:flex;
-        width:4.8em; 
-        height:4.8em;
+        width:4.8vw; 
+        height:4.8vw;
         border:none;
         align-items: center;
         justify-content:center;
         background:none;
         border-radius:50%;
-        box-shadow: 3px 3px 7px 0 #155E70;
+        box-shadow: 0.5vw 0.2vw 0.7vw 0 #155E70;
         cursor:pointer;
 
         &:hover{
@@ -86,8 +91,8 @@ export const inputs = Styled.div`
     display:flex;   
     width:80%;
     flex-wrap:wrap;
-    height:20em;
-    margin-top:1.5em;
+    height:20vw;
+    margin-top:1.5vw;
 
 `
 export const input = Styled.div`
@@ -105,11 +110,14 @@ export const input = Styled.div`
     input{
         width:80%;
         font-size:1.2vw;
-        padding:0.7em;
+        padding:0.7vw;
         border:none;
         background:none;
         border-bottom:1px solid #155E70;
         text-transform: capitalize;
+    }
+    .input-chave{
+        
     }
 
 `
@@ -121,7 +129,7 @@ export const textarea = Styled.div`
     margin-left:9%;
     
     textarea{
-        padding:0.7em;
+        padding:0.7vw;
         border: 1px solid #155E70;
         heigth:60px;
         width:90%;
@@ -140,6 +148,11 @@ export const options = Styled.div`
     justify-content: space-around;
     align-items:center;    
 
+    input{
+        width:1vw;
+        height:1vw;
+    }
+
     label{
         display:flex;
         background:#efefef;        
@@ -147,7 +160,7 @@ export const options = Styled.div`
         justify-content:center;
         align-items: center;
         cursor: pointer;
-        padding: 3px 30px ;
+        padding: 0.2vw 2vw ;
         font-weight:bold;
         border-radius:15px;
      
@@ -161,7 +174,7 @@ export const options = Styled.div`
     button{
         width:7vw;
         color:#FFF;
-        border-bottom:1px solid #155E70;
+        border-bottom:0.2vw solid #155E70;
         border-radius:50px;
         background:#155E70;
         cursor: pointer;
@@ -178,12 +191,10 @@ export const ContainerWebCam = Styled.div`
 
     display:flex;
     flex-direction:column;
-    margin: 0;
-    padding: 0;
-    width:260px;
-    height:150px;
-    top:80px;
-    left:10px;
+    width:15vw;
+    height:15vw;
+    top:4vw;
+    left:1.5vw;
     position:absolute;
     content-justify: center;
     align-items: center;
@@ -196,10 +207,9 @@ export const ContainerWebCam = Styled.div`
     }
 
     img{
-        position:absolute;
         background:#155E70;
-        width:260px;
-        height:135px;
+        width:17vw;
+        height:10vw;
         display:flex;
         z-index: -1;  
     }
@@ -211,21 +221,21 @@ export const button = Styled.div`
     content-justify: center;
 
     .btn-capturar{
-        border-radius: 0px 0px 0px 10px ;
+        border-radius: 0px 0px 0px 1vw ;
     }
     .btn-limpar{
-        border-radius: 0px 0px 10px 0px;
+        border-radius: 0px 0px 1vw 0px;
     }
 
     button{
-        padding:0px;
         text-align: center;
-        width:50%;
-        height:1.5em;
+        width:100%;
+        height:1.5vw;
         color:#d8d8d8;
         background:#155E70;
-        border-bottom: 1px solid #155E70;
-        font-size: 1vw;
+        border:none;
+        font-size: 0.8vw;
+        z-index: 2; 
         
         &:hover{
             cursor: pointer;
@@ -236,12 +246,21 @@ export const button = Styled.div`
 
 `
 
-export const Webcam = Styled.div`
-    width:100%;
-    heigth:100%;
+export const Webcss = Styled.div`
+    width:15vw;
+    height:15vw;
+    top:-2.5vw;
+    left:-0.5vw;
+    position:absolute;
     display:flex;
     content-justify: center;
     align-items: center;
+    
+    video{
+        width:16vw;
+        height:15vw;
+
+    }
 
 
 

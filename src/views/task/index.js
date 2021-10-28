@@ -171,25 +171,28 @@ import TypeIcons from '../../utils/typeicons'
         
         <S.Form>   
           <S.ContainerWebCam>
-            <Webcam 
-              nome="image" 
-              onChange={e => setImage(e.target.value)} 
-              value={image}
-              ref={webcamRef} 
-              audio={false}
-              height={150}
-              width={240}
-              screenshotFormat="image/jpeg"
-              videoConstraints={videoConstraints}
-              mirrored={true}
-            />
 
-            <S.button>
-              <button onClick={capture} >Capturar Foto</button>
-              <button onClick={Limpar} >Limpar</button>
-            </S.button>
-
+            <S.Webcss>
+              <Webcam 
+                nome="image" 
+                onChange={e => setImage(e.target.value)} 
+                value={image}
+                ref={webcamRef} 
+                audio={false}
+                width={240}
+                height={150}
+                screenshotFormat="image/jpeg"
+                videoConstraints={videoConstraints}
+                mirrored={true}
+              />
+            </S.Webcss>
+            
             <img src={image} name="image" id="image" image={image} className={webClasse}alt="" value={console.log(image)} />
+            
+            <S.button>
+              <button onClick={capture} className="btn-capturar" >Capturar Foto</button>
+              <button onClick={Limpar} className="btn-limpar">Limpar</button>
+            </S.button>
 
           </S.ContainerWebCam>
 

@@ -94,13 +94,9 @@ function Home() {
 
         }
 
-
       </S.Content>
 
-
       <Footer />
-
-      
 
     </S.Container>
     )

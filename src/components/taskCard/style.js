@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div `
     width:80%;
-    height:13em;
+    height:15vw;
     
     display: flex;
     align-items: center;
@@ -10,10 +10,10 @@ export const Container = styled.div `
     flex-direction: column;
     
     background: linear-gradient(215deg, #F0F1F5 40%, #dfe6e9 83%);
-    box-shadow:  0px 0px 15px 5px #b4b7bc;
-    border-top-left-radius: 20px;
+    box-shadow:  0px 0px 1vw 0.2vw #b4b7bc;
+    border-top-left-radius: 1.5vw;
     cursor:pointer;
-    margin:1.5em;
+    margin:2vw;
     transition:all 0.3s ease;
 
     opacity: ${props => props.devolucao ? 0.5 : 1};
@@ -49,40 +49,34 @@ export const chave = styled.div`
     display:flex;
     align-items: center;
     justify-content:center;
-    width:5em;
-    height:5em;
+    width:5vw;
+    height:5vw;
 
-    .ativo{
+    h3{
         display:flex;
+        border-radius:50px;
+        width:2vw;
+        height:2vw;
+        align-items: center;
+        justify-content:center;
+        position:absolute;
+        margin-left:3vw;
+        margin-top:2vw;
+    }
+    .ativo{
+        
         background:#ffff00;
         color:#000;
-        border-radius:50px;
-        width:1.9em;
-        height:1.9em;
-        align-items: center;
-        justify-content:center;
-        position:absolute;
-        margin-left:45px;
-        margin-top:25px;
     }
     .inativo{
-        display:flex;
         background:#155E70;
         color:#FFF;
-        border-radius:50px;
-        width:1.9em;
-        height:1.9em;
-        align-items: center;
-        justify-content:center;
-        position:absolute;
-        margin-left:45px;
-        margin-top:25px;
     }
 
     img{
         display:flex;
-        width:4em;
-        height:4em;
+        width:4vw;
+        height:4vw;
         margin-bottom:0.5em;
     }
     

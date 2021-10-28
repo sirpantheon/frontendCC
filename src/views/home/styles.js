@@ -10,7 +10,7 @@ export const FilterArea = Styled.div`
     display:flex;
     width:100%;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 1vw;
 
     button{
         font-size:1.6vw;
@@ -30,7 +30,7 @@ export const Content = Styled.div`
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
-    margin-bottom:50px;
+    margin-bottom:3vw;
 
     a{
         width:23%;
@@ -42,26 +42,16 @@ export const Content = Styled.div`
 
 export const Title = Styled.div`
     width:100%;
-    border-bottom:3px solid #155E70;
+    border-bottom:0.3vw solid #155E70;
     display:flex;
     justify-content:center;
-    margin:10px 0;
+    margin:0.1vw 0;
 
     h3{
         color:#155E70;
         font-size:1.5vw;
         position:relative;
-        top:16px;
+        top:1vw;
         background:#fff;
     }
-`
-export const Entrega = Styled.div`
-    border-top:5px solid #155E70;
-    width:100%;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    margin-bottom:50px;
-    padding:5px;
-
 `

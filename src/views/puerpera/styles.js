@@ -12,18 +12,18 @@ export const Container = Styled.div`
 
 export const Title = Styled.div`
     width:100%;
-    border-bottom:3px solid #155E70;
+    border-bottom:0.3vw solid #155E70;
     display:flex;
     justify-content:center;
-    margin:5px 0;
+    margin:0.5vw 0;
 
     h3{
         color:#155E70;
         font-size:1.3vw;
         position:relative;
-        top:16px;
+        top:1vw;
         background:#fff;
-        padding:0px 5px;
+        padding:0px 2vw;
     }
 `
 
@@ -31,36 +31,37 @@ export const inputs = Styled.div`
     display:flex;   
     width:80%;
     flex-direction:column;
-    height:5em;
-    margin-top:25px;
+    height:2vw;
+    margin-top: 1.5vw ;
+    margin-bottom:1.5vw ;
 
     .cadPuerpera{
         font-size:1vw;
-        width:5%;
+        width:5vw;
         color:#155E70;
-        padding:5px 10px;
+        padding:0.1vw 0.2vw;
     }
 
 `
 export const input = Styled.div`
     display:flex;
     width:100%;
-    height:20px;
-    padding: 10px; 0;
+    height:4vw;
+    padding: 0.5vw; 
 
     input{
         width:95%;
         font-size:0.8vw;
-        padding:2px;
+        padding:0.2;
         border:none;
         background:none;
-        border-bottom:1px solid #155E70;
+        border-bottom:0.2vw solid #155E70;
     }
 
     select{
         width:75%;
         border:none;
-        border-bottom:1px solid #155E70;
+        border-bottom:0.2vw solid #155E70;
     }
 
 `
@@ -70,7 +71,8 @@ export const options = Styled.div`
     width:100%;
     justify-content: space-around;
     align-items:center;
-    margin-top:50px;
+    margin-top:5vw;
+    margin-bottom:1vw;
 
     button{
         width:15%;
@@ -92,17 +94,22 @@ export const Content = Styled.div`
     
     display:flex;
     width:80%;
-    height:20em;
+    height:20vw;
     justify-content:center;
     align-items: center;
     flex-direction: column;
     background:#155E70;
-    margin-top:10px;
+    margin-top:0.5vw;
     overflow-y: auto;
-    padding-top:5px;
+    padding:2vw;
+
+    button{
+        width:77vw;
+        height:3vw;
+    }
 
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 0.5vw;
       }
       
       /* Track */
