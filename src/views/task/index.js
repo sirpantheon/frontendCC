@@ -33,7 +33,6 @@ import TypeIcons from '../../utils/typeicons'
       width: 640,
       height: 360,
       facingMode: "user"
-      
     };
 
     let webClasse = ""

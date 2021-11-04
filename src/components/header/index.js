@@ -15,6 +15,7 @@ function Header(){
                 <Link to="/">Inicio</Link>
                 <Link to="/task">Registrar Chave</Link>
                 <Link to="/purpera">Registrar Puérpera</Link>
+                <Link to="/claviculario">Claviculário</Link>
                 
 
             </S.rightSide>

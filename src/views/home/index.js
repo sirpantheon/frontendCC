@@ -19,7 +19,7 @@ function Home() {
     iconEntrega.push(i)
   }
 
-  const [filterActived, setFilterActived]=useState('today')
+  const [filterActived, setFilterActived]=useState('late')
   const [tasks,setTasks]=useState([])
   const [lateCount,setLateCount] = useState()
 

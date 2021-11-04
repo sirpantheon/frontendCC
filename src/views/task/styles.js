@@ -17,7 +17,7 @@ export const Form = Styled.div`
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    margin-top:50px;
+    margin-top:2vw;
 
 
 `
@@ -31,8 +31,8 @@ export const legendaIcons = Styled.div`
 
     h3{
         font-size:1.2vw;
-        width:2em; 
-        height:2em;
+        width:3vw; 
+        height:2vw;
         display:flex;
         align-items: center;
         justify-content: space-around;
@@ -103,7 +103,7 @@ export const input = Styled.div`
     span{
         width:20%;
         color:#155E70;
-        padding:0.7em;
+        padding:0.7vw;
         font-size:1vw;
     }
 
@@ -113,7 +113,7 @@ export const input = Styled.div`
         padding:0.7vw;
         border:none;
         background:none;
-        border-bottom:1px solid #155E70;
+        border-bottom:0.1vw solid #155E70;
         text-transform: capitalize;
     }
     .input-chave{
@@ -130,8 +130,7 @@ export const textarea = Styled.div`
     
     textarea{
         padding:0.7vw;
-        border: 1px solid #155E70;
-        heigth:60px;
+        border: 0.1vw solid #155E70;
         width:90%;
         resize: none;
         display: flex;
@@ -160,9 +159,9 @@ export const options = Styled.div`
         justify-content:center;
         align-items: center;
         cursor: pointer;
-        padding: 0.2vw 2vw ;
+        padding: 0.2vw 1vw ;
         font-weight:bold;
-        border-radius:15px;
+        border-radius:30vw;
      
         &:hover{
             opacity:0.7;
@@ -174,15 +173,15 @@ export const options = Styled.div`
     button{
         width:7vw;
         color:#FFF;
-        border-bottom:0.2vw solid #155E70;
-        border-radius:50px;
+        border:0.1vw solid #155E70;
         background:#155E70;
         cursor: pointer;
         font-size:1.2vw;
+        border-radius:30vw;
 
         &:hover{
             opacity:0.7;
-            box-shadow:0 4px 20px #155E70;
+            box-shadow:0 0.3vw 0.7vw #155E70;
             
         }
     }
@@ -239,7 +238,7 @@ export const button = Styled.div`
         
         &:hover{
             cursor: pointer;
-            box-shadow: 0px 3px 10px 3px #155E70 ;
+            box-shadow: 0vw 0.3vw 1vw 0.3vw #155E70 ;
             opacity:0.8;
         }
     }

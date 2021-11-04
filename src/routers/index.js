@@ -5,6 +5,8 @@ import Home from '../views/home';
 import Task from '../views/task';
 import purpera from '../views/puerpera';
 
+import claviculario from '../views/claviculario';
+
 
 export default function Routers(){
     return(
@@ -14,8 +16,7 @@ export default function Routers(){
                 <Route path='/task' exact component={Task}/>
                 <Route path='/task/:id' exact component={Task}/>
                 <Route path='/purpera' exact component={purpera}/>
-                
-
+                <Route path='/claviculario' exact component={claviculario}/>
             </Switch>
         </BrowserRouter>
         
