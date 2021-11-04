@@ -1,33 +1,33 @@
-import React, {useState , useEffect} from 'react'
-import {Redirect} from 'react-router-dom'
+import React, {useState , useEffect, useRef} from 'react'
+import { Redirect } from 'react-router-dom'
 import * as S from './styles'
 import Webcam from 'react-webcam'
-import { useRef } from 'react'
 
-  
+//database mongodb
 import api from '../../services/api'
 
-  //components
+//componentes
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import TypeIcons from '../../utils/typeicons'
 
   function Task({match}) {
-    const [redirect,setRedirect] = useState(false)
-    const [ type,setType ]= useState()
-    const [ devolucao,setDevolucao]= useState(false)
-    const [ nome,setNome ]= useState()
-    const [ image,setImage ]= useState()
-    const[ registro,setRegistro ]= useState()
-    const [ especialidade,setEspecialidade ] = useState()
-    const [ chave,setChave ]= useState()
-    const [ privativo,setPrivativo ]= useState()
-    const [ descricao,setDescricao ]= useState()
-    const [ macaddress,setMacaddress ]= useState("11:11:11:11:11:11")
-    const [ filterActived, setFilterActived]=useState('today')
-    const [ tasks,setTasks ]=useState([])
-    const [ lateCount,setLateCount ] = useState()
 
+    //constantes para os estados
+    const [redirect,setRedirect] = useState(false)
+    const [ type,setType ] = useState()
+    const [ devolucao,setDevolucao] = useState(false)
+    const [ nome,setNome ] = useState()
+    const [ image,setImage ] = useState()
+    const [ registro,setRegistro ] = useState()
+    const [ especialidade,setEspecialidade ] = useState()
+    const [ chave,setChave ] = useState()
+    const [ privativo,setPrivativo ] = useState()
+    const [ descricao,setDescricao ] = useState()
+    const macaddress = "11:11:11:11:11:11"    
+    
+
+    //especificações da webcam
     const webcamRef = useRef(null);
     const videoConstraints = {
       width: 640,
@@ -42,8 +42,7 @@ import TypeIcons from '../../utils/typeicons'
       webClasse = "inativo"
     }
 
-
-
+    //carrega os detalhes de cada registro
     async function LoadTaskDetail(){
       await api.get(`/task/${match.params.id}`)
       .then(response => {
@@ -59,20 +58,8 @@ import TypeIcons from '../../utils/typeicons'
       })
 
     }
-    
-  async function loadTask(){
-    await api.get(`/task/filter/${filterActived}/11:11:11:11:11:11`)
-    .then(response=>{
-      setTasks(response.data)
-    })
-  }
-  async function lateVerify(){
-    await api.get(`/task/filter/late/11:11:11:11:11:11}`)
-    .then(response=>{
-      setLateCount(response.data.length)
-    })
-  }
 
+    //salva o registro ou modifica
     async function Save() {
 
       //validação
@@ -84,8 +71,6 @@ import TypeIcons from '../../utils/typeicons'
         return alert('por favor preencha a especialidade')
       else if(!registro)
         return alert('por favor preencha o registro')
-      
-
 
       if(match.params.id){
         await api.put(`/task/${match.params.id}`,{
@@ -122,6 +107,7 @@ import TypeIcons from '../../utils/typeicons'
       }
     }
 
+    //remover registro
   async function remove(){
     const options = window.confirm('Voce De seja Remover Esse Registro ?')
       if(options === true){
@@ -135,7 +121,8 @@ import TypeIcons from '../../utils/typeicons'
 
   }
   
-    const capture = React.useCallback(
+  //função de captura de foto pela webcam
+  const capture = React.useCallback(
         () => {
           const imageSrc = webcamRef.current.getScreenshot({width:640,height:300});
           console.log(imageSrc);
@@ -146,19 +133,16 @@ import TypeIcons from '../../utils/typeicons'
         [webcamRef]
       ); 
 
+      //limpa a foto registrada
       async function Limpar(){
         setImage("")  
             
         return setImage
       }
 
-
     useEffect(()=>{
       LoadTaskDetail()
-      loadTask()
-      lateVerify()
-    },[] )
-
+    })
 
       return (
       <S.Container>
@@ -166,7 +150,6 @@ import TypeIcons from '../../utils/typeicons'
         {redirect && <Redirect to="/"/>}
         
         <Header />
-
         
         <S.Form>   
           <S.ContainerWebCam>
@@ -195,8 +178,6 @@ import TypeIcons from '../../utils/typeicons'
 
           </S.ContainerWebCam>
 
-
-          
             <S.typeIcons>
                 <S.iconsContent>
                   {
@@ -295,8 +276,6 @@ import TypeIcons from '../../utils/typeicons'
                   <button type="submit" onClick={Save}>Enviar</button>
                 
               </S.options>
-
-
 
         </S.Form>
   
